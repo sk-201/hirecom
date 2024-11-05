@@ -6,6 +6,11 @@ module.exports = {
       background: "#0D0D0D",
       white: "#FFFFFF",
       lightGray: "#A4ABB7",
+      textBlack: "#171219",
+      borderGray: "#D9D9D9",
+      teal: "#26B5A1",
+      backGray: "#ECEEFF",
+      orange: "#EF5D30",
     },
     fontFamily: {
       outfit: "Outfit, sans-serif",

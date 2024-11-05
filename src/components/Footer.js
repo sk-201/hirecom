@@ -25,29 +25,48 @@ const Footer = () => {
               <div>
                 <h2 class="mb-6 text-xl font-medium text-white  ">Company</h2>
                 <ul class="list-disc list-inside text-white font-medium">
-                  <li class="mb-4 font-normal text-base">About Us</li>
-                  <li class="mb-4 font-normal text-base">Team</li>
-                  <li class="mb-4 font-normal text-base">Employers</li>
-                  <li class="mb-4 font-normal text-base">Services</li>
-                  <li class="mb-4 font-normal text-base">Contact Us</li>
-                  <li class="mb-4 font-normal text-base">Privacy Policy</li>
-                  <li class="mb-4 font-normal text-base">Disclaimer</li>
+                  <li class="mb-4 font-normal text-sm lg:text-base">
+                    About Us
+                  </li>
+                  <li class="mb-4 font-normal text-sm lg:text-base">Team</li>
+                  <li class="mb-4 font-normal text-sm lg:text-base">
+                    Employers
+                  </li>
+                  <li class="mb-4 font-normal  text-sm lg:text-base">
+                    Services
+                  </li>
+                  <li class="mb-4 font-normal  text-sm lg:text-base">
+                    Contact Us
+                  </li>
+                  <li class="mb-4 font-normal text-sm lg:text-base">
+                    Privacy Policy
+                  </li>
+                  <li class="mb-4 font-normal text-sm lg:text-base">
+                    Disclaimer
+                  </li>
                 </ul>
               </div>
 
               <div>
                 <h2 class="mb-6 text-xl font-medium text-white  ">Platform</h2>
                 <ul class="list-disc list-inside text-white font-medium">
-                  <li class="mb-4 font-normal text-base">WooCommerce</li>
-                  <li class="mb-4 font-normal text-base">
+                  <li class="mb-4 font-normal text-sm lg:text-base">
+                    WooCommerce
+                  </li>
+                  <li class="mb-4 font-normal text-sm lg:text-base">
                     IBM Watson Commerce
                   </li>
-                  <li class="mb-4 font-normal text-base">Big Commerce</li>
-                  <li class="mb-4 font-normal text-base">Shopify</li>
-                  <li class="mb-4 font-normal text-base">
+                  <li class="mb-4 font-normal text-sm lg:text-base">
+                    Big Commerce
+                  </li>
+                  <li class="mb-4 font-normal text-sm lg:text-base">Shopify</li>
+                  <li class="mb-4 font-normal text-sm lg:text-base">
                     Salesforce Commerce Cloud
                   </li>
-                  <li class="mb-4 font-normal text-base"> Magento</li>
+                  <li class="mb-4 font-normal text-sm lg:text-base">
+                    {" "}
+                    Magento
+                  </li>
                 </ul>
               </div>
 
