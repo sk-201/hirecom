@@ -1,98 +1,103 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+
 const CaseStudies = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+  // Check for screen size to toggle mobile, tablet, or desktop view
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 834);
+      setIsTablet(width >= 834 && width <= 1024);
+    };
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const cardData = [
     {
       id: 1,
-      frame: "./client-1.png",
-      avatar: "./client-1-avatar.png",
-      name: "Sara Thomas",
-      designation: "Co Founder urh",
+      frame: "./case-1.png",
+      date: "Dec 10,2021",
       content:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pLorem ipsum dolor sit amet, consectetuer adipiscing elit. AenLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pLorem ipsum dolor sit amet, consectetuer adipiscing elit. AenLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies ",
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
     },
     {
       id: 2,
-      frame: "./client-1.png",
-      avatar: "./client-1-avatar.png",
-      name: "Sara Thomas",
-      designation: "Co Founder urh",
+      frame: "./case-2.png",
+      date: "Dec 10,2021",
       content:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pLorem ipsum dolor sit amet, consectetuer adipiscing elit. AenLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pLorem ipsum dolor sit amet, consectetuer adipiscing elit. AenLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies ",
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
     },
     {
       id: 3,
-      frame: "./client-1.png",
-      avatar: "./client-1-avatar.png",
-      name: "Sara Thomas",
-      designation: "Co Founder urh",
+      frame: "./case-3.png",
+      date: "Dec 10,2021",
       content:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pLorem ipsum dolor sit amet, consectetuer adipiscing elit. AenLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pLorem ipsum dolor sit amet, consectetuer adipiscing elit. AenLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies ",
-    },
-    {
-      id: 4,
-      frame: "./client-1.png",
-      avatar: "./client-1-avatar.png",
-      name: "Sara Thomas",
-      designation: "Co Founder urh",
-      content:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pLorem ipsum dolor sit amet, consectetuer adipiscing elit. AenLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pLorem ipsum dolor sit amet, consectetuer adipiscing elit. AenLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies ",
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
     },
   ];
+
   return (
-    <div className="font-outfit">
+    <div className="font-outfit mt-10">
       <h2 className="font-bold text-4xl text-center mb-5">Case Studies</h2>
-      {/* <Swiper
-        modules={[Pagination]}
-        pagination={{
-          clickable: true,
-        }}
-        className="mySwiper"
-        spaceBetween={50}
-        slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-        style={{
-          "--swiper-pagination-color": "#26b5a1",
-          "--swiper-pagination-bullet-inactive-color": "#d9d9d9",
-          "--swiper-pagination-bullet-inactive-opacity": "1",
-          "--swiper-pagination-bullet-size": "16px",
-          "--swiper-pagination-bullet-horizontal-gap": "6px",
-          "--swiper-pagination-bottom": "0px",
-        }}
-      > */}
-      {cardData.map((card) => {
-        return (
-          // <SwiperSlide key={card.id} className=" lg:pb-10 px-5 lg:px-0 pb-5 ">
-          <div className="flex flex-col bg lg:flex-row justify-around items-center  ">
-            <div className="w-full  lg:w-[600px]">
-              <div className="flex flex-col ">
-                <img src="./quotes.png" width={45} height={45} />
-                <p className="mt-4 text-base font-normal text-[#494949]">
+
+      {isMobile || isTablet ? (
+        <Swiper
+          modules={[Pagination]}
+          pagination={{
+            clickable: true,
+          }}
+          className="mySwiper bg-[#4747ea]"
+          spaceBetween={20}
+          slidesPerView={isMobile ? 1 : 2}
+          style={{
+            "--swiper-pagination-color": "#26b5a1",
+            "--swiper-pagination-bullet-inactive-color": "#d9d9d9",
+            "--swiper-pagination-bullet-inactive-opacity": "1",
+            "--swiper-pagination-bullet-size": "16px",
+            "--swiper-pagination-bullet-horizontal-gap": "6px",
+            "--swiper-pagination-bottom": "10px",
+          }}
+        >
+          {cardData.map((card) => (
+            <SwiperSlide key={card.id} className="pb-5 px-5 ">
+              <p className="text-white text-center my-10 font-bold text-4xl">
+                Our Journals
+              </p>
+              <div className="flex flex-col mx-auto">
+                <img src={card.frame} alt={`Case study ${card.id}`} />
+                <p className="text-white text-sm font-bold mt-4">{card.date}</p>
+                <p className="text-white text-base font-medium mt-4">
                   {card.content}
                 </p>
-                <div className="flex  items-center mt-4">
-                  <img src={card.avatar} />
-                  <div className="flex flex-col mx-2">
-                    <p className="font-semibold text-xl text-textBlack">
-                      {card.name}
-                    </p>
-                    <p className="font-normal text-2xl text-[#494949]">
-                      {card.designation}
-                    </p>
-                  </div>
-                </div>
               </div>
-            </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div className="flex bg-[#4747ea] flex-col justify-around items-center h-[606px]">
+          <p className="text-white font-bold text-4xl">Our Journals</p>
+          <div className="flex justify-around items-center px-5">
+            {cardData.map((card) => (
+              <div className="flex flex-col mx-10" key={card.id}>
+                <img src={card.frame} alt={`Case study ${card.id}`} />
+                <p className="text-white text-sm font-bold mt-4">{card.date}</p>
+                <p className="text-white text-base font-medium mt-4">
+                  {card.content}
+                </p>
+              </div>
+            ))}
           </div>
-          // </SwiperSlide>
-        );
-      })}
-      {/* </Swiper> */}
+        </div>
+      )}
     </div>
   );
 };

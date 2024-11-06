@@ -44,7 +44,7 @@ const ClientCarousel = () => {
     },
   ];
   return (
-    <div className="font-outfit">
+    <div className="font-outfit mt-10">
       <h2 className="font-bold text-4xl text-center mb-5">
         Clients Testimonial
       </h2>
