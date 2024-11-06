@@ -1,3 +1,107 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-pagination {
+  height: 20px !important;
+}
+@media (min-width: 375px) {
+  #frame {
+    position: relative;
+    width: 100%;
+    height: 410px;
+    padding-top: 10px;
+    margin-left: 40px;
+    margin-right: 20px;
+    background: "#ffffff";
+    border: none;
+  }
+  #frame::before,
+  #frame::after {
+    position: absolute;
+    width: 166px;
+    height: 166px;
+    content: "";
+  }
+  #frame::before {
+    left: 0px;
+    top: 0px;
+
+    border-left: 20px solid #26b5a1;
+    border-top: 20px solid #26b5a1;
+  }
+  #frame::after {
+    right: 45px;
+    bottom: 10px;
+
+    border-right: 20px solid #26b5a1;
+    border-bottom: 20px solid #26b5a1;
+  }
+}
+@media (min-width: 834px) {
+  #frame {
+    position: relative;
+    width: 100%;
+    height: 850px;
+    /* padding-left: 15px;
+    padding-right: 0px;
+    padding-top: 40px; */
+    margin-left: 40px;
+    margin-right: 20px;
+    background: "#ffffff";
+    border: none;
+  }
+  #frame::before,
+  #frame::after {
+    position: absolute;
+    width: 166px;
+    height: 166px;
+    content: "";
+  }
+  #frame::before {
+    left: 20px;
+    top: 0px;
+    border-left: 20px solid #26b5a1;
+    border-top: 20px solid #26b5a1;
+  }
+  #frame::after {
+    right: 110px;
+    bottom: 20px;
+
+    border-right: 20px solid #26b5a1;
+    border-bottom: 20px solid #26b5a1;
+  }
+}
+@media (min-width: 1024px) {
+  #frame {
+    position: relative;
+    width: 657px;
+    height: 451px;
+    padding-left: 15px;
+    padding-right: 0px;
+    padding-top: 40px;
+
+    background: "#ffffff";
+    border: none;
+  }
+  #frame::before,
+  #frame::after {
+    position: absolute;
+    width: 166px;
+    height: 166px;
+    content: "";
+  }
+  #frame::before {
+    left: 0;
+    top: 0;
+    border-left: 40px solid #26b5a1;
+    border-top: 40px solid #26b5a1;
+  }
+  #frame::after {
+    right: 65px;
+    bottom: -40px;
+
+    border-right: 40px solid #26b5a1;
+    border-bottom: 40px solid #26b5a1;
+  }
+}
